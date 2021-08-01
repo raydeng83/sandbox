@@ -17,7 +17,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 
-	@GetMapping("/")
+	@GetMapping("/home")
 	public String index(@ModelAttribute("model") ModelMap model) {
 
 		model.addAttribute("customers", customerService.findAll());
@@ -27,16 +27,7 @@ public class CustomerController {
 
 	@GetMapping("/detail/{customerId}")
 	public String detail(@PathVariable("customerId") int customerId, Model model) {
-		Customer customer = null;
-
-		List<Customer> customerList = customerService.findAll();
-
-		for (Customer value : customerList) {
-			if (customerId == value.getCustomerId()) {
-				customer = value;
-				break;
-			}
-		}
+		Customer customer = customerService.find(customerId).get();
 
 		model.addAttribute("customer", customer);
 
@@ -48,7 +39,7 @@ public class CustomerController {
 		
 		customerService.add(customer);
 		
-		return "redirect:/";
+		return "redirect:/home";
 	}
 
 	@GetMapping("/delete/{customerId}")
@@ -56,7 +47,7 @@ public class CustomerController {
 
 		customerService.remove(customerId);
 
-		return "redirect:/";
+		return "redirect:/home";
 	}
 
 }

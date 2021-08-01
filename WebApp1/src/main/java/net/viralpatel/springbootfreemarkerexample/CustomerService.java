@@ -1,10 +1,7 @@
 package net.viralpatel.springbootfreemarkerexample;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 
 import org.springframework.stereotype.Service;
 
@@ -25,6 +22,30 @@ public class CustomerService {
 
 	public void add(Customer customer) {
 		customer.setCustomerId(generateRandomId());
+
+		if (customer.getCountry() == null) {
+			customer.setCountry("");
+		}
+
+		if (customer.getCustomerName() == null) {
+			customer.setCustomerName("");
+		}
+
+		if (customer.getEmail() == null) {
+			customer.setEmail("");
+		}
+
+		if (customer.getFirstName() == null) {
+			customer.setFirstName("");
+		}
+
+		if (customer.getLastName() == null) {
+			customer.setLastName("");
+		}
+
+		if (customer.getDateOfBirth() == null) {
+			customer.setDateOfBirth(LocalDate.of(1111, 1, 1));
+		}
 
 		customers.add(customer);
 	}

@@ -3,7 +3,7 @@
 <head>
 <title>Web Application 1 - Demo Customer Table</title>
 
-<link href="/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+<link href="/webapp1/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 	rel="stylesheet">
 
 <style>
@@ -30,7 +30,7 @@
 	</nav>
 	<div class="container">
 
-		<form class="form-inline" method="post" action="/add">
+		<form class="form-inline" method="post" action="/webapp1/add">
 			<input
 				type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"
 				id="customerName" name="customerName" placeholder="Customer name" />
@@ -76,11 +76,11 @@
 				<#list model["customers"] as customer>
 				<tr>
 					<th scope="row">${customer.customerId}</th>
-					<td><a href="/detail/${customer.customerId}">${customer.customerName}</a></td>
+					<td><a href="/webapp1/detail/${customer.customerId}">${customer.customerName}</a></td>
 					<td>${customer.email}</td>
 					<td>${customer.dateOfBirth}</td>
 					<td><a class="btn btn-sm btn-warning" role="button"
-						href="/delete/${customer.customerId}">Delete</a></td>
+						href="/webapp1/delete/${customer.customerId}">Delete</a></td>
 				</tr>
 				</#list>
 			</tbody>

@@ -3,7 +3,7 @@
 <head>
     <title>Web Application 1 - Demo Customer Table</title>
 
-    <link href="/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    <link href="/webapp1/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           rel="stylesheet">
 
     <style>
@@ -41,7 +41,7 @@
             <li class="list-group-item">Country: ${customer.country}</li>
         </ul>
     </div><br />
-    <a type="button" href="/" class="btn btn-primary">Back</a>
+    <a type="button" href="/webapp1/home" class="btn btn-primary">Back</a>
 </div>
 </body>
 </html>
